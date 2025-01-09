@@ -15,6 +15,7 @@
 	let refreshing = $state(true);
 
 	// Account keys and viem client
+	const privateKey = $derived($ethSk ? $ethSk : null);
 	const account = $derived($ethSk ? privateKeyToAccount($ethSk) : null);
 	const p256Pub = $derived($p256Sk ? P256.getPublicKey({privateKey: $p256Sk}) : null);
 	const client = $derived(account ?
@@ -47,6 +48,10 @@
 	})
 
 </script>
+
+{#if privateKey}
+	<p>eth sk:</p><pre>{privateKey}</pre>
+{/if}
 
 {#if account}
 	<p>account: {account.address}</p>
