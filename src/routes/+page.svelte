@@ -45,7 +45,7 @@
 		ourBalance = getBalance(client, { address: account.address });
 		ourCode = getCode(client, { address: account.address });
 
-	})
+	});
 
 </script>
 

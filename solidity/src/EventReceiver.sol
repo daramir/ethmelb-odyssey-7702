@@ -5,13 +5,14 @@ pragma solidity ^0.8.10;
 contract EventReceiver {
 
     event Received(address indexed from, uint256 value);
+    event Fallback(address indexed from, uint256 value);
 
     receive() external payable {
         emit Received(msg.sender, msg.value);
     }
 
     fallback() external payable {
-        emit Received(msg.sender, msg.value);
+        emit Fallback(msg.sender, msg.value);
     }
 
 }

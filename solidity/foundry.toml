@@ -7,4 +7,5 @@ eof = true
 odyssey = true
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
-rpc_endpoints = { odyssey = "https://odyssey.ithaca.xyz/" }
+rpc_endpoints = { odyssey = "https://odyssey.ithaca.xyz/", anvil = "http://localhost:8545" }
+eth_rpc_url = "odyssey"
