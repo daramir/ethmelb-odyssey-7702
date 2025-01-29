@@ -3,7 +3,7 @@
 The most useful commands for running these examples / playing around with contracts involves cast running against either local anvil
 or the odyssey testnet
 
-By default the foundry.toml file will use the odyssey testnet remote as the RPC url.
+By default, the foundry.toml file will use the odyssey testnet remote as the RPC url.
 You can change this by specifying `--rpc-url anvil` for the localhost node or any other URL string for a remote rpc (assuming it's odyssey capable).
 
 ### Get current code
@@ -26,7 +26,7 @@ export C_ADD={contract address to delegate}
 
 Now you can use the private key to set the delegation / perform setup using the private key and target contract for delegation
 ```bash
-cast send $ADD --auth $C_ADD --private_key $PRIVATE_KEY "some_init_function()"
+cast send $ADD --auth $C_ADD --private-key $PRIVATE_KEY "some_init_function()"
 ```
 
 This should call `some_init_function()` on your own address after delegating it to use the contract supplied, which should set your EOA code to `0xef0100 || address`.
@@ -51,12 +51,12 @@ Which should call `some_function()` on the user's address with code loaded from 
 TBH I think maybe the odyssey testnet caches the signed auth's and attaches them to the txs to that address? Let's see?
 
 TODO:
-- [ ] test what requirements for sending transactions are
-- [ ] where they originate from via signed auth
-- [ ] cases to invalidate the signed auth and if relevant
-- [ ] clearing delegation
-- [ ] some basic security questions and interactive answers
+- [x] test what requirements for sending transactions are
+- [x] where they originate from via signed auth
+- [x] cases to invalidate the signed auth and if relevant
+- [x] clearing delegation
+- [x] some basic security questions and interactive answers
 - [ ] hard mode, p256 delegation and sending a successful tx
 - [ ] hell mode, bls multisig delegation and sending a successful tx
-- [ ] improve blockscout to recognize EOA and delegated contracts better
-  - [ ] Build your own explorer to visualise this ??? profit 
+- [x] improve blockscout to recognize EOA and delegated contracts better
+  - [ ] Build your own explorer to visualise this ??? profit
